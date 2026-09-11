@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Quicksand", "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+
+  --color-cream: #FFF9F2;
+  --color-blush: #F8DDE5;
+  --color-lavender: #E7DDF7;
+  --color-sage: #DCEBDD;
+  --color-baby-blue: #DCECF7;
+  --color-butter: #FFF0B8;
+  --color-coral: #E9A6A6;
+  --color-ink: #4B4650;
+  --color-ink-soft: #8A838C;
+
+  --color-blush-deep: #F0B9CB;
+  --color-lavender-deep: #C9B6EC;
+  --color-sage-deep: #A9CFAE;
+  --color-blue-deep: #AFD3EC;
+  --color-butter-deep: #F5DD7E;
+
+  --shadow-soft: 0 8px 30px -8px rgba(75, 70, 80, 0.12);
+  --shadow-softer: 0 4px 16px -6px rgba(75, 70, 80, 0.10);
+  --shadow-lift: 0 16px 40px -12px rgba(75, 70, 80, 0.18);
+
+  --radius-cozy: 1.75rem;
+  --radius-cozy-sm: 1.25rem;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    overscroll-behavior-y: none;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-coral);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+
+  ::selection {
+    background: var(--color-blush);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
